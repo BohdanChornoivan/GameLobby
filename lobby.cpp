@@ -27,7 +27,6 @@ void Lobby::AddPlayer()
 		
 		while (pIter->GetNext() != 0)
 		{
-			cout << pIter->GetName() << endl;
 			pIter = pIter->GetNext();
 		}
 		pIter->SetNext(pNewPlayer);
