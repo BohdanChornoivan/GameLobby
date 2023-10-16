@@ -20,16 +20,12 @@ void Lobby::AddPlayer()
 	if (m_pHead == 0)
 	{
 		m_pHead = pNewPlayer;
+		lastPlayer = pNewPlayer;
 	}
 	else
 	{
-		Player* pIter = m_pHead;
-		
-		while (pIter->GetNext() != 0)
-		{
-			pIter = pIter->GetNext();
-		}
-		pIter->SetNext(pNewPlayer);
+		lastPlayer->SetNext(pNewPlayer);
+		lastPlayer = pNewPlayer;
 	}
 }
 
@@ -67,7 +63,7 @@ ostream& operator<<(ostream& os, const Lobby& aLobby)
 	{
 		while (pIter != 0)
 		{
-			os << pIter->GetName() << endl;
+			os << *pIter << endl;
 			pIter = pIter->GetNext();
 		}
 	}

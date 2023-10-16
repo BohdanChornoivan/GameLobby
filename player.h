@@ -4,6 +4,7 @@
 using namespace std;
 class Player
 {
+	friend ostream& operator<<(ostream& os, const Player& aPlayer);
 private:
 	string m_Name;
 	Player* m_pNext;

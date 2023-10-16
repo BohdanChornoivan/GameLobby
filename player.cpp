@@ -1,4 +1,5 @@
 #include "player.h"
+#include <iostream>
 
 Player::Player(const string& name) :
 	m_Name(name),
@@ -18,4 +19,10 @@ Player* Player::GetNext() const
 void Player::SetNext(Player* next)
 {
 	m_pNext = next;
+}
+
+ostream& operator<<(ostream& os, const Player& aPlayer)
+{
+	os << aPlayer.GetName();
+	return os;
 }

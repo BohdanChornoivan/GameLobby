@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 	Lobby myLobby;
-	int choice;
+    char choice;
 	do
 	{
 		cout << myLobby;
@@ -19,13 +19,13 @@ int main()
 		cin >> choice;
 		switch (choice)
 		{
-		case 0: cout << "Good-bye.\n"; break;
-		case 1: myLobby.AddPlayer(); break;
-		case 2: myLobby.RemovePlayer(); break;
-		case 3: myLobby.Clear(); break;
+		case '0': cout << "Good-bye.\n"; break;
+		case '1': myLobby.AddPlayer(); break;
+		case '2': myLobby.RemovePlayer(); break;
+		case '3': myLobby.Clear(); break;
 		default: cout << "That was not a valid choice.\n";
 		}
-	} while (choice != 0);
+	} while (choice != '0');
 
 	return 0;
 }
